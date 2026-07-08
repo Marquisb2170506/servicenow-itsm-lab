@@ -10,119 +10,139 @@
 
 This lab documents the setup and use of a ServiceNow Personal Developer Instance (PDI) to simulate a real enterprise IT help desk environment. Three Tier 1 incident tickets were created and resolved from start to finish, demonstrating the full ITSM ticket lifecycle — from caller intake to resolution documentation and ticket closure.
 
-ServiceNow is the most widely used IT Service Management (ITSM) platform in the world, deployed by Fortune 500 companies, government agencies, and managed service providers. This lab provides hands-on experience with the same platform used by enterprise help desk teams daily.
+ServiceNow is the most widely used IT Service Management (ITSM) platform in the world, deployed by Fortune 500 companies, government agencies, and managed service providers.
 
 ---
 
-## Environment Setup
+## Lab Walkthrough — Step by Step
 
-| Component | Details |
-|-----------|---------|
-| Platform | ServiceNow Personal Developer Instance |
-| Instance ID | dev425764 |
-| Version | Australia (Latest Release) |
-| Access Level | Admin |
-| Module Used | Incident Management |
+### Phase 1 — Account Setup and Instance Provisioning
 
-### Provisioning Process
-1. Created a free ServiceNow Developer account at developer.servicenow.com
-2. Verified email address
-3. Requested a Personal Developer Instance (PDI)
-4. Received instance provisioning confirmation email
-5. Logged into instance as Admin
-6. Navigated to Incident module via Application Navigator
+**Step 1 — Email Verification**  
+Created a free ServiceNow Developer account at developer.servicenow.com and verified the email address.
+
+![Email Verification](screenshots/01_Email_Verification.jpeg)
 
 ---
 
-## Incident Tickets Created and Resolved
+**Step 2 — PDI Provisioning Request**  
+Submitted a request for a Personal Developer Instance (PDI). ServiceNow builds a fully functional, private cloud-hosted instance for each developer.
 
-### Ticket 1 — Locked Out Account
-**Incident Number:** INC0010007  
-**Caller:** David Miller  
-**Category:** Inquiry / Help | Login / Password  
-**Priority:** Medium  
-**State:** Resolved ✅
-
-**Scenario:**  
-User David Miller called the help desk reporting he was unable to log in to his workstation. The system displayed an "Account Locked" error after multiple failed login attempts.
-
-**Actions Taken:**
-- Verified user identity via employee ID
-- Located account in Active Directory Users and Computers
-- Unlocked the account
-- Advised user to attempt login
-
-**Resolution Code:** Solution provided  
-**Resolution Notes:** Account unlocked in Active Directory Users and Computers. User identity verified via employee ID prior to action. User confirmed successful login after account was unlocked. No further action required.
+![PDI Provisioning](screenshots/02_PDI_Provisioning.jpeg)
 
 ---
 
-### Ticket 2 — Password Reset
-**Incident Number:** INC0010008  
-**Caller:** Marcus Williams  
-**Category:** Inquiry / Help | Login / Password  
-**Priority:** Low  
-**State:** Resolved ✅
+**Step 3 — Welcome Email**  
+Received the ServiceNow Developer Program welcome email confirming account activation.
 
-**Scenario:**  
-User Marcus Williams contacted the help desk requesting a password reset after forgetting his domain password following a two-week vacation.
-
-**Actions Taken:**
-- Verified user identity via employee ID and manager confirmation
-- Reset password in Active Directory Users and Computers
-- Enabled "User must change password at next logon" flag
-- Provided temporary password to user
-
-**Resolution Code:** Solution provided  
-**Resolution Notes:** Password reset in Active Directory. User must change password at next logon flag enabled. User confirmed successful login with temporary password.
+![Welcome Email](screenshots/03_Email_Start_Building.jpeg)
 
 ---
 
-### Ticket 3 — Terminated Employee Account Disable
-**Incident Number:** INC0010010  
-**Caller:** Sarah Johnson (HR Manager)  
-**Category:** Inquiry / Help | Software  
-**Priority:** High  
-**State:** Resolved ✅
+**Step 4 — PDI Ready Email**  
+Received email notification that the Personal Developer Instance was provisioned and ready to use.
 
-**Scenario:**  
-HR Manager Sarah Johnson submitted an urgent request to disable the Active Directory account of terminated employee Thomas Harris (username: tharris). Per company security policy, all access must be revoked within one hour of termination.
+![PDI Ready Email](screenshots/04_PDI_Ready_Email.jpeg)
 
-**Actions Taken:**
-- Received urgent request from HR
-- Located account for tharris in Active Directory Users and Computers
-- Disabled account immediately
-- Moved account to Disabled Users OU
-- Flagged email and remote access tokens for revocation
-- Notified IT Security team per offboarding policy
+---
 
-**Resolution Code:** Solution provided  
-**Resolution Notes:** Account for tharris located and disabled in Active Directory Users and Computers. Account moved to Disabled Users OU. IT Security team notified per offboarding policy. All actions completed within SLA window.
+**Step 5 — PDI Online Dashboard**  
+Logged into the ServiceNow Developer portal. Instance dev425764 showing status: Online, running the Australia (Latest Release) version.
+
+![PDI Online Dashboard](screenshots/05_PDI_Online_Dashboard.jpeg)
+
+---
+
+### Phase 2 — Instance Login and Navigation
+
+**Step 6 — ServiceNow Homepage**  
+Successfully logged into the live ServiceNow instance as Admin. This is the central ITSM platform dashboard.
+
+![ServiceNow Homepage](screenshots/06_ServiceNow_Homepage.jpeg)
+
+---
+
+**Step 7 — Incident Module Navigation**  
+Used the Application Navigator (All menu) to locate the Incident module and opened a new incident form.
+
+![Incident Navigation](screenshots/07_Incident_Navigation.png)
+
+---
+
+### Phase 3 — Ticket 1: Locked Out Account (INC0010007)
+
+**Scenario:** User David Miller called the help desk — unable to log in due to account lockout after multiple failed password attempts.
+
+**Step 8 — Ticket 1 Open**  
+Created incident INC0010007 with caller David Miller, Short Description: "User account locked out — unable to log in to domain."
+
+![Ticket 1 Open](screenshots/08_Ticket1_Open.png)
+
+---
+
+**Step 9 — Resolution Information**  
+Filled in the Resolution Information tab: Resolution Code set to "Solution provided" and Resolution Notes documenting the action taken.
+
+![Ticket 1 Resolution Info](screenshots/09_Ticket1_Resolution_Info.jpeg)
+
+---
+
+**Step 10 — Ticket 1 Resolved**  
+INC0010007 successfully resolved. Blue confirmation banner: "INC0010007 has been resolved."
+
+![Ticket 1 Resolved](screenshots/10_Ticket1_Resolved.png)
+
+---
+
+### Phase 4 — Ticket 2: Password Reset (INC0010008)
+
+**Scenario:** User Marcus Williams forgot his domain password after a two-week vacation and requested a reset.
+
+**Step 11 — Ticket 2 Open**  
+Created incident INC0010008 with caller Marcus Williams, Short Description: "User requesting password reset — forgot domain password."
+
+![Ticket 2 Open](screenshots/11_Ticket2_Open.jpeg)
+
+---
+
+**Step 12 — Ticket 2 Resolved**  
+INC0010008 successfully resolved. Resolution Notes: "Password reset in Active Directory. User must change password at next logon flag enabled."
+
+![Ticket 2 Resolved](screenshots/12_Ticket2_Resolved.jpeg)
+
+---
+
+### Phase 5 — Ticket 3: Terminated Employee Account Disable (INC0010010)
+
+**Scenario:** HR Manager Sarah Johnson submitted an urgent request to disable the account of terminated employee Thomas Harris (tharris). Per security policy, access must be revoked within one hour of termination.
+
+**Step 13 — Ticket 3 Resolved**  
+INC0010010 successfully resolved. Priority set to High. Resolution Notes: "Account for tharris located and disabled in Active Directory. Account moved to Disabled Users OU. IT Security team notified per offboarding policy. All actions completed within SLA window."
+
+![Ticket 3 Resolved](screenshots/13_Ticket3_Resolved.jpeg)
+
+---
+
+## Ticket Summary
+
+| Ticket | Scenario | Priority | Resolution |
+|--------|----------|----------|-----------|
+| INC0010007 | Locked Out Account — David Miller | Medium | Account unlocked in Active Directory ✅ |
+| INC0010008 | Password Reset — Marcus Williams | Low | Password reset, must change at next logon ✅ |
+| INC0010010 | Terminated Employee — Thomas Harris | **High** | Account disabled and moved to Disabled OU ✅ |
 
 ---
 
 ## Key Concepts Demonstrated
 
-| Concept | Application in This Lab |
-|---------|------------------------|
-| **Ticket Lifecycle** | Created, updated, and resolved all tickets from open to closed |
-| **Caller Verification** | Documented identity verification before taking action on all tickets |
-| **Resolution Documentation** | Filled in Resolution Code and Resolution Notes on every ticket |
-| **SLA Awareness** | Ticket 3 (terminated employee) treated as Priority 1 with time-sensitive resolution |
-| **Security-Aware Offboarding** | Followed proper access revocation procedures for terminated employee |
-| **ITSM Workflow** | Navigated Application Navigator, Incident module, and Resolution Information tab |
-
----
-
-## Skills Demonstrated
-
-- ServiceNow ITSM Platform Navigation
-- Incident Management (Create, Update, Resolve, Close)
-- Ticket Documentation and Resolution Notes
-- Caller Intake and Identity Verification
-- Priority and Impact Assessment
-- SLA-Aware Ticket Handling
-- Security-Aware Account Offboarding
+| Concept | Application |
+|---------|------------|
+| Ticket Lifecycle | Created, updated, and resolved all tickets from open to closed |
+| Caller Verification | Documented identity verification before taking action |
+| Resolution Documentation | Filled in Resolution Code and Resolution Notes on every ticket |
+| SLA Awareness | Ticket 3 treated as Priority 1 with time-sensitive resolution |
+| Security-Aware Offboarding | Followed proper access revocation procedures for terminated employee |
+| ITSM Workflow | Navigated Application Navigator, Incident module, and Resolution Information tab |
 
 ---
 
@@ -132,15 +152,9 @@ The three scenarios in this lab are directly linked to the [Active Directory Hom
 
 ---
 
-## Screenshots
-
-Screenshots documenting the full lab from account provisioning to ticket resolution are included in the `/screenshots` folder of this repository.
-
----
-
 ## Contact
 
 **Marquis Borney**  
 Email: marquisb.2315@gmail.com  
 Location: St. Louis, MO (Open to Remote)  
-LinkedIn: [linkedin.com/in/marquis-borney-717326102)
+LinkedIn: [linkedin.com/in/marquis-borney-717326102](https://www.linkedin.com/in/marquis-borney-717326102)
