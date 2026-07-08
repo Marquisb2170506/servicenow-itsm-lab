@@ -143,4 +143,4 @@ Screenshots documenting the full lab from account provisioning to ticket resolut
 **Marquis Borney**  
 Email: marquisb.2315@gmail.com  
 Location: St. Louis, MO (Open to Remote)  
-LinkedIn: [linkedin.com/in/marquis-borney](https://linkedin.com/in/marquis-borney)
+LinkedIn: [linkedin.com/in/marquis-borney-717326102)
